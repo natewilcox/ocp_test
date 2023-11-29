@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+
+metadata:
+  name: nathansss-project
+  namespace: nathan-ns
+spec:
+
+  description: Nathan Project
+
+  destinations:
+  - namespace: nathan-ns
+    server: https://kubernetes.default.svc
+
+  sourceRepos:
+  - https://github.com/natewilcox/ocp_test.git
+
+  clusterResourceWhitelist:
+  - group: "*"
+    kind: Namespace

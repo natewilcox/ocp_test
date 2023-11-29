@@ -11,7 +11,7 @@ spec:
     namespace: nathan-ns
     server: "https://kubernetes.default.svc"
     
-  project: default
+  project: nathansss-project
   
   source:
     path: manifest
