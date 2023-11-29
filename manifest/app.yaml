@@ -3,12 +3,12 @@ kind: Application
 
 metadata:
   name: ocp-test
-  namespace: nathan
+  namespace: nathan-project
   
 spec:
 
   destination:
-    namespace: nathan
+    namespace: nathan-app-ns
     server: "https://kubernetes.default.svc"
     
   project: default
