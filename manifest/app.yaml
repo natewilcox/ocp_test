@@ -8,7 +8,7 @@ metadata:
 spec:
 
   destination:
-    namespace: nathan-app-ns
+    namespace: nathan-project-ns
     server: "https://kubernetes.default.svc"
     
   project: nathans-project
