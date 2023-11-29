@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 
 metadata:
-  name: nathan-project
+  name: nathans-project
   namespace: argocd
 spec:
 
@@ -11,6 +11,6 @@ spec:
   destinations:
   - namespace: nathan-project-ns
     server: https://kubernetes.default.svc
-    
+
   sourceRepos:
   - https://github.com/natewilcox/ocp_test.git
