@@ -9,7 +9,7 @@ spec:
   description: Nathan Project
 
   destinations:
-  - namespace: "*"
+  - namespace: nathan-project-ns
     server: https://kubernetes.default.svc
 
   sourceRepos:
