@@ -16,5 +16,5 @@ spec:
   - https://github.com/natewilcox/ocp_test.git
 
   clusterResourceWhitelist:
-  - group: ""
+  - group: "*"
     kind: Namespace
