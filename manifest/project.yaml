@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 
 metadata:
-  name: nathansss-project
+  name: nathans-project
   namespace: nathan-ns
 spec:
 
