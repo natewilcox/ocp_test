@@ -13,8 +13,8 @@ spec:
   project: nathans-project
   
   source:
+    repoURL: https://github.com/natewilcox/ocp_test.git 
     path: gitops/applications
-    repoURL: https://github.com/natewilcox/ocp_test.git
     targetRevision: master
     
   syncPolicy:
