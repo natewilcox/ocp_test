@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: ocp-test
+  
+spec:
+
+  destination:
+    namespace: nathan-ns
+    server: "https://kubernetes.default.svc"
+    
+  project: nathans-ns
+  
+  source:
+    repoURL: https://github.com/natewilcox/ocp_test.git 
+    path: overlays/dev
+    targetRevision: master
+    
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

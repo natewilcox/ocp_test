@@ -10,6 +10,9 @@ spec:
   destinations:
   - namespace: nathan-ns
     server: https://kubernetes.default.svc
+  
+  sourceRepos:
+  - https://github.com/natewilcox/ocp_test.git
 
   clusterResourceWhitelist:
   - group: "*"
