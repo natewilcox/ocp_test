@@ -16,7 +16,7 @@ patches:
       group: route.openshift.io
       version: v1
       kind: Route
-      name: nginx-route
+      name: qa-nginx-route
     patch: |-
       - op: replace
         path: /spec/host
