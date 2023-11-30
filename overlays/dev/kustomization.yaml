@@ -4,6 +4,8 @@ kind: Kustomization
 resources:
   - "../../base"
   
+namePrefix: dev-
+
 configMapGenerator:
   - name: app-config
     envs:
@@ -14,7 +16,7 @@ patches:
       group: route.openshift.io
       version: v1
       kind: Route
-      name: nginx-route
+      name: dev-nginx-route
     patch: |-
       - op: replace
         path: /spec/host
