@@ -3,7 +3,7 @@ kind: AppProject
 
 metadata:
   name: nathans-project
-  namespace: nathan-ns
+  namespace: argocd
 spec:
 
   description: Nathan Project
