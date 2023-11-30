@@ -3,9 +3,14 @@ kind: Pod
 
 metadata:
   name: nginx-pod
-
+  labels:
+    app: nginx
+    
 spec:
   containers:
   - name: nginx-container
     image: nginx
     imagePullPolicy: IfNotPresent
+
+    ports:
+    - containerPort: 80
