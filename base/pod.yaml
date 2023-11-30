@@ -7,5 +7,5 @@ metadata:
 spec:
   containers:
   - name: hello-world-container
-    image: hello-world
+    image: hello-worldaa
     imagePullPolicy: IfNotPresent
