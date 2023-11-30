@@ -18,4 +18,5 @@ patches:
     patch: |-
       - op: replace
         path: /spec/host
-        value: nathan-app.dev.apps.ocp4.lab.unixnerd.org
+        value: nathan-app.dev.ocp4.lab
+    
