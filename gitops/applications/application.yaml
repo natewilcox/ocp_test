@@ -10,7 +10,7 @@ spec:
     namespace: nathan-ns
     server: "https://kubernetes.default.svc"
     
-  project: nathans-project
+  project: nathans-ns
   
   source:
     repoURL: https://github.com/natewilcox/ocp_test.git 
