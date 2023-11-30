@@ -18,5 +18,5 @@ patches:
     patch: |-
       - op: replace
         path: /spec/host
-        value: dev.nathan-nginx.apps-crc.testing
+        value: dev-nathan-nginx.apps-crc.testing
     
