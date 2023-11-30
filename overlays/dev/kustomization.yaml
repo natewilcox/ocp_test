@@ -19,7 +19,4 @@ patches:
       - op: replace
         path: /spec/host
         value: dev-nathan-nginx.apps-crc.testing
-      - op: replace
-        path: /metadata/name
-        value: dev-nginx-route
     
