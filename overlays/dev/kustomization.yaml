@@ -8,3 +8,14 @@ configMapGenerator:
   - name: app-config
     envs:
       - .env
+
+patches:
+  - target:
+      group: route.openshift.io
+      version: v1
+      kind: Route
+      name: nathan-app
+    patch: |-
+      - op: replace
+        path: /spec/host
+        value: nathan-app.dev.apps.ocp4.lab.unixnerd.org
