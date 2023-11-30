@@ -13,7 +13,7 @@ spec:
   project: nathans-project
   
   source:
-    path: manifest
+    path: gitops/applications
     repoURL: https://github.com/natewilcox/ocp_test.git
     targetRevision: master
     
