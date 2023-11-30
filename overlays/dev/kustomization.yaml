@@ -3,8 +3,6 @@ kind: Kustomization
 
 resources:
   - "../../base"
-  
-namePrefix: dev-
 
 configMapGenerator:
   - name: app-config
@@ -16,9 +14,12 @@ patches:
       group: route.openshift.io
       version: v1
       kind: Route
-      name: dev-nginx-route
+      name: nginx-route
     patch: |-
       - op: replace
         path: /spec/host
         value: dev-nathan-nginx.apps-crc.testing
+      - op: replace
+        path: /meta/name
+        value: dev-nginx-route
     
