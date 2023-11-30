@@ -4,4 +4,4 @@ kind: Kustomization
 configMapGenerator:
   - name: app-config
     envs:
-      - env.txt
+      - .env
