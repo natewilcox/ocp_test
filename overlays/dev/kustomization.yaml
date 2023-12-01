@@ -10,7 +10,7 @@ vars:
   - name: SERVICE_NAME
     objref:
       kind: Service
-      name: dev-nginx-service
+      name: nginx-service
       apiVersion: v1
     fieldref:
       fieldpath: metadata.name
