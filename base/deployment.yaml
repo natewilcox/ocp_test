@@ -1,9 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: application-deployment
   labels: 
     app: placeholder
+    
 spec:
   replicas: 1
   selector:
