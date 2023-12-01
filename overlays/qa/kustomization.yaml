@@ -1,17 +1,45 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+resources:
+  - "../../base"
+
+commonLabels:
+  app: qa-nginx
+
+namePrefix: qa-
 
 configMapGenerator:
   - name: app-config
     envs:
       - .env
-
+      
+replacements:
+  - source:
+      kind: Service
+      name: nginx-service
+      fieldPath: metadata.name
+    targets:
+      - select:
+          kind: Route
+        fieldPaths: 
+          - spec.to.name
+  - source:
+      kind: Pod
+      name: nginx-pod
+      fieldPath: metadata.labels.app
+    targets:
+      - select:
+          kind: Service
+        fieldPaths: 
+          - spec.selector.app 
+          
 patches:
   - target:
       group: route.openshift.io
       version: v1
       kind: Route
+      name: qa-nginx-route
     patch: |-
       - op: replace
         path: /spec/host
