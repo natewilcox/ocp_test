@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
       - name: application-container
-        image: natewilcox/node_server:1.0.0
+        image: natewilcox/node_server:1.0.1
         ports:
         - containerPort: 8080
