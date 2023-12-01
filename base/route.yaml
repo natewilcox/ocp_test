@@ -2,7 +2,7 @@ apiVersion: route.openshift.io/v1
 kind: Route
 
 metadata:
-  name: nginx-route
+  name: application-route
   
 spec:
   to:

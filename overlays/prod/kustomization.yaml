@@ -5,7 +5,7 @@ resources:
   - "../../base"
 
 commonLabels:
-  app: prod-nginx
+  app: prod-application
 
 namePrefix: prod-
 
@@ -17,7 +17,7 @@ configMapGenerator:
 replacements:
   - source:
       kind: Service
-      name: nginx-service
+      name: application-service
       fieldPath: metadata.name
     targets:
       - select:
@@ -26,7 +26,7 @@ replacements:
           - spec.to.name
   - source:
       kind: Pod
-      name: nginx-pod
+      name: application-pod
       fieldPath: metadata.labels.app
     targets:
       - select:
@@ -39,8 +39,8 @@ patches:
       group: route.openshift.io
       version: v1
       kind: Route
-      name: prod-nginx-route
+      name: prod-application-route
     patch: |-
       - op: replace
         path: /spec/host
-        value: prod-nathan-nginx.apps-crc.testing
+        value: prod-application.apps-crc.testing

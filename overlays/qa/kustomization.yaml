@@ -5,7 +5,7 @@ resources:
   - "../../base"
 
 commonLabels:
-  app: qa-nginx
+  app: qa-application
 
 namePrefix: qa-
 
@@ -17,7 +17,7 @@ configMapGenerator:
 replacements:
   - source:
       kind: Service
-      name: nginx-service
+      name: application-service
       fieldPath: metadata.name
     targets:
       - select:
@@ -26,7 +26,7 @@ replacements:
           - spec.to.name
   - source:
       kind: Pod
-      name: nginx-pod
+      name: application-pod
       fieldPath: metadata.labels.app
     targets:
       - select:
@@ -39,8 +39,8 @@ patches:
       group: route.openshift.io
       version: v1
       kind: Route
-      name: qa-nginx-route
+      name: qa-application-route
     patch: |-
       - op: replace
         path: /spec/host
-        value: qa-nathan-nginx.apps-crc.testing
+        value: qa-application.apps-crc.testing

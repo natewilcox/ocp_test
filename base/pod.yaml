@@ -2,10 +2,10 @@ apiVersion: v1
 kind: Pod
 
 metadata:
-  name: nginx-pod
+  name: application-pod
 
 spec:
   containers:
-  - name: nginx-container
-    image: nginx
+  - name: node_server-container
+    image: node_server
     imagePullPolicy: IfNotPresent
