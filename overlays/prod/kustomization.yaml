@@ -22,7 +22,7 @@ replacements:
         fieldPaths: 
           - spec.to.name
   - source:
-      kind: DeploymentConfig
+      kind: Deployment
       name: application-deployment
       fieldPath: metadata.labels.app
     targets:
@@ -44,7 +44,7 @@ patches:
   - target:
       group: apps.openshift.io
       version: v1
-      kind: DeploymentConfig
+      kind: Deployment
       name: application-deployment
     patch: |- 
       - op: replace
