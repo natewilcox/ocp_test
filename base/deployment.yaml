@@ -1,0 +1,26 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+
+metadata:
+  name: application-deployment
+  labels: 
+    app: placeholder
+
+spec:
+  replicas: 1
+  selector:
+    app: placeholder
+
+  template:
+    metadata:
+      labels:
+        app: placeholder
+    spec:
+      containers:
+      - name: application-container
+        image: node_server:latest
+        ports:
+        - containerPort: 8080
+
+  triggers:
+  - type: ConfigChange

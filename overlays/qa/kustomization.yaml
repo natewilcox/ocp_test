@@ -4,9 +4,6 @@ kind: Kustomization
 resources:
   - "../../base"
 
-commonLabels:
-  app: qa-application
-
 namePrefix: qa-
 
 configMapGenerator:
@@ -25,22 +22,37 @@ replacements:
         fieldPaths: 
           - spec.to.name
   - source:
-      kind: Pod
-      name: application-pod
+      kind: DeploymentConfig
+      name: application-deployment
       fieldPath: metadata.labels.app
     targets:
       - select:
           kind: Service
         fieldPaths: 
-          - spec.selector.app 
-          
+          - spec.selector.app
+
 patches:
   - target:
       group: route.openshift.io
       version: v1
       kind: Route
-      name: qa-application-route
+      name: application-route
     patch: |-
       - op: replace
         path: /spec/host
         value: qa-application.apps-crc.testing
+  - target:
+      group: apps.openshift.io
+      version: v1
+      kind: DeploymentConfig
+      name: application-deployment
+    patch: |- 
+      - op: replace
+        path: /spec/selector/app
+        value: qa-application-pod
+      - op: replace
+        path: /spec/template/metadata/labels/app
+        value: qa-application-pod
+      - op: replace
+        path: /metadata/labels/app
+        value: qa-application-deployment-label
