@@ -4,8 +4,16 @@ kind: Kustomization
 resources:
   - "../../base"
 
+commonLabels:
+  app: dev-nginx
+
 namePrefix: dev-
 
+configMapGenerator:
+  - name: app-config
+    envs:
+      - .env
+      
 replacements:
   - source:
       kind: Service
@@ -26,11 +34,6 @@ replacements:
         fieldPaths: 
           - spec.selector.app 
           
-configMapGenerator:
-  - name: app-config
-    envs:
-      - .env
-
 patches:
   - target:
       group: route.openshift.io
@@ -41,13 +44,3 @@ patches:
       - op: replace
         path: /spec/host
         value: dev-nathan-nginx.apps-crc.testing
-  - target:
-      group: v1
-      version: v1
-      kind: Pod
-      name: nginx-pod
-    patch: |- 
-      - op: add
-        path: /metadata/labels/app
-        value: dev-nginx 
-    
