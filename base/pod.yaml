@@ -6,6 +6,6 @@ metadata:
 
 spec:
   containers:
-  - name: node_server-container
+  - name: node-server-container
     image: node_server
     imagePullPolicy: IfNotPresent
