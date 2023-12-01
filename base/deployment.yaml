@@ -21,3 +21,6 @@ spec:
         image: natewilcox/node_server:1.0.1
         ports:
         - containerPort: 8080
+        env:
+        - name: npm_config_cache
+          value: /tmp/.npm
