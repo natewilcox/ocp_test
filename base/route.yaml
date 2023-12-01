@@ -10,4 +10,4 @@ spec:
     name: placeholder
     
   port:
-    targetPort: 8080
+    targetPort: 80
