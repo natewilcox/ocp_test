@@ -7,6 +7,6 @@ metadata:
 spec:
   to:
     kind: Service
-    name: dev-nginx-service
+    name: $(SERVICE_NAME)
   port:
     targetPort: 80
