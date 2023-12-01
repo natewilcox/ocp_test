@@ -10,11 +10,11 @@ vars:
   - name: SERVICE_NAME
     objref:
       kind: Service
-      name: nginx-service
+      name: dev-nginx-service
       apiVersion: v1
     fieldref:
       fieldpath: metadata.name
-      
+
 configMapGenerator:
   - name: app-config
     envs:
