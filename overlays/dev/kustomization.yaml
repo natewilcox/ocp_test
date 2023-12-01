@@ -6,15 +6,26 @@ resources:
 
 namePrefix: dev-
 
-vars:
-  - name: SERVICE_NAME
-    objref:
+replacements:
+  - source:
       kind: Service
       name: nginx-service
-      apiVersion: v1
-    fieldref:
-      fieldpath: metadata.name
-
+      fieldPath: metadata.name
+    targets:
+      - select:
+          kind: Route
+        fieldPaths: 
+          - spec.to.name
+  - source:
+      kind: Pod
+      name: nginx-pod
+      fieldPath: metadata.labels.app
+    targets:
+      - select:
+          kind: Service
+        fieldPaths: 
+          - spec.selector.app 
+          
 configMapGenerator:
   - name: app-config
     envs:
@@ -30,4 +41,13 @@ patches:
       - op: replace
         path: /spec/host
         value: dev-nathan-nginx.apps-crc.testing
+  - target:
+      group: v1
+      version: v1
+      kind: Pod
+      name: nginx-pod
+    patch: |- 
+      - op: add
+        path: /metadata/labels/app
+        value: dev-nginx 
     
