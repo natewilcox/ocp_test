@@ -7,6 +7,7 @@ metadata:
 spec:
   to:
     kind: Service
-    name: $(SERVICE_NAME)
+    name: placeholder
+    
   port:
     targetPort: 80
