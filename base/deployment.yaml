@@ -22,7 +22,7 @@ spec:
       #   command: ["sh", "-c", "chown -R node:node /home/node/.npm"]
       containers:
       - name: application-container
-        image: nginx
+        image: natewilcox/node_server:1.0.4
         ports:
         - containerPort: 80
         # env:
