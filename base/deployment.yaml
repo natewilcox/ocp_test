@@ -22,9 +22,9 @@ spec:
       #   command: ["sh", "-c", "chown -R node:node /home/node/.npm"]
       containers:
       - name: application-container
-        image: natewilcox/node_server:1.0.1
+        image: nginx:lastest
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         # env:
         # - name: npm_config_cache
         #   value: /tmp/.npm
