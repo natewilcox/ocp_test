@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: application-pod
+  labels:
+    app: placeholder
+
+spec:
+  containers:
+  - name: node-server-container
+    image: natewilcox/node_server:1.0.1
+    ports:
+    - containerPort: 8080
+    env:

@@ -23,14 +23,23 @@ replacements:
         fieldPaths: 
           - spec.to.name
   - source:
-      kind: Deployment
-      name: application-deployment
-      fieldPath: metadata.labels.app
+      kind: Pod
+      name: application-pod
+      fieldPath: metadata.name
     targets:
       - select:
           kind: Service
         fieldPaths: 
           - spec.selector.app
+  # - source:
+  #     kind: Deployment
+  #     name: application-deployment
+  #     fieldPath: metadata.labels.app
+  #   targets:
+  #     - select:
+  #         kind: Service
+  #       fieldPaths: 
+  #         - spec.selector.app
 
 patches:
   - target:
@@ -43,17 +52,25 @@ patches:
         path: /spec/host
         value: dev-application.apps-crc.testing
   - target:
-      group: apps
       version: v1
-      kind: Deployment
-      name: application-deployment
+      kind: Pod
+      name: application-pod
     patch: |- 
       - op: replace
-        path: /spec/selector/matchLabels/app
-        value: dev-application-pod-label
-      - op: replace
-        path: /spec/template/metadata/labels/app
-        value: dev-application-pod-label
-      - op: replace
         path: /metadata/labels/app
-        value: dev-application-deployment-label
+        value: dev-application-pod-label
+  # - target:
+  #     group: apps
+  #     version: v1
+  #     kind: Deployment
+  #     name: application-deployment
+  #   patch: |- 
+  #     - op: replace
+  #       path: /spec/selector/matchLabels/app
+  #       value: dev-application-pod-label
+  #     - op: replace
+  #       path: /spec/template/metadata/labels/app
+  #       value: dev-application-pod-label
+  #     - op: replace
+  #       path: /metadata/labels/app
+  #       value: dev-application-deployment-label
