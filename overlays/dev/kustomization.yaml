@@ -25,7 +25,7 @@ replacements:
   - source:
       kind: Pod
       name: application-pod
-      fieldPath: metadata.name
+      fieldPath: metadata.labels.app
     targets:
       - select:
           kind: Service
