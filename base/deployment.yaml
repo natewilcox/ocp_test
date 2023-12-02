@@ -17,9 +17,9 @@ spec:
         app: placeholder
     spec:
       initContainers:
-      - name: fix-npm-cache
-        image: node:14
-        command: ["sh", "-c", "chown -R node:node /home/node/.npm"]
+      # - name: fix-npm-cache
+      #   image: node:14
+      #   command: ["sh", "-c", "chown -R node:node /home/node/.npm"]
       containers:
       - name: application-container
         image: natewilcox/node_server:1.0.1
