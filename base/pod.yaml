@@ -9,7 +9,7 @@ metadata:
 spec:
   containers:
   - name: node-server-container
-    image: natewilcox/node-server:1.0.4
+    image: natewilcox/node_server:1.0.4
     ports:
     - containerPort: 8080
     env:
