@@ -5,6 +5,7 @@ metadata:
   name: application-route
   
 spec:
+  host: dev-application.apps-crc.testing
   to:
     kind: Service
     name: placeholder
