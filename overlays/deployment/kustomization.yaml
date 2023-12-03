@@ -50,7 +50,7 @@ patches:
     patch: |- 
       - op: replace
         path: /spec/selector/matchLabels/app
-        value: deployment-application-pod-labels
+        value: deployment-application-pod-label
       - op: replace
         path: /spec/template/metadata/labels/app
         value: deployment-application-pod-label
