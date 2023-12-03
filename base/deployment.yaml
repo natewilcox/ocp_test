@@ -8,23 +8,18 @@ metadata:
 
 spec:
   replicas: 1
+
   selector:
     matchLabels:
       app: placeholder
+
   template:
     metadata:
       labels:
         app: placeholder
     spec:
-      initContainers:
-      # - name: fix-npm-cache
-      #   image: node:14
-      #   command: ["sh", "-c", "chown -R node:node /home/node/.npm"]
       containers:
       - name: application-container
-        image: natewilcox/node_server:1.0.4
+        image: nginx
         ports:
         - containerPort: 80
-        # env:
-        # - name: npm_config_cache
-        #   value: /tmp/.npm

@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 
 metadata:
-  name: qa
+  name: prod
   
 spec:
 
@@ -14,7 +14,7 @@ spec:
   
   source:
     repoURL: https://github.com/natewilcox/ocp_test.git 
-    path: overlays/qa
+    path: overlays/standalone
     targetRevision: master
     
   syncPolicy:
