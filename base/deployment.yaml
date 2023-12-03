@@ -23,6 +23,6 @@ spec:
       - name: application-container
         image: natewilcox/node_server:1.0.4
         ports:
-        - containerPort: 80
+        - containerPort: 8080
       securityContext:
         runAsUser: 0
