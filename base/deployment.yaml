@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - name: application-container
-        image: nginx
+        image: natewilcox/node_server:1.0.4
         ports:
         - containerPort: 80
