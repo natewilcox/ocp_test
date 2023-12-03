@@ -4,19 +4,19 @@ kind: Deployment
 metadata:
   name: application-deployment
   labels: 
-    app: placeholder123
+    app: placeholder
 
 spec:
   replicas: 1
 
   selector:
     matchLabels:
-      app: placeholder333
+      app: placeholder
 
   template:
     metadata:
       labels:
-        app: placeholder333
+        app: placeholder
     spec:
       serviceAccountName: super-user
       containers:

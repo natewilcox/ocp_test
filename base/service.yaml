@@ -6,7 +6,7 @@ metadata:
 
 spec:
   selector:
-    app: placeholder123
+    app: placeholder
     
   ports:
     - protocol: TCP
