@@ -18,6 +18,7 @@ spec:
       labels:
         app: placeholder
     spec:
+      serviceAccountName: super-user
       containers:
       - name: application-container
         image: natewilcox/node_server:1.0.4
