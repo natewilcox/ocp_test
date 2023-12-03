@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: application-deployment
   labels: 
-    app: placeholder
+    app: placeholder123
 
 spec:
   replicas: 1
