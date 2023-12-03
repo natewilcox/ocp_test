@@ -53,7 +53,7 @@ patches:
         value: deployment-application-pod-label
       - op: replace
         path: /spec/template/metadata/labels/app
-        value: deployment-application-pod-label
+        value: deployment-application-pod-labels
       - op: replace
         path: /metadata/labels/app
         value: deployment-application-deployment-label
