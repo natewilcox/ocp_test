@@ -23,8 +23,5 @@ spec:
         name: node-server
         env:
           - name: label
-            valueFrom:
-              configMapKeyRef:
-                name: app-config
-                key: label
+            value: "Hello"
       serviceAccountName: super-user
