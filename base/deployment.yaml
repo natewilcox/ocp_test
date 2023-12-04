@@ -22,7 +22,7 @@ spec:
         imagePullPolicy: IfNotPresent
         name: node-server
         envFrom:
-          configMapRef:
-            name: app-config
+        - configMapRef:
+            name: app-config  
 
       serviceAccountName: super-user
