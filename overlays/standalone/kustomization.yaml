@@ -9,7 +9,7 @@ resources:
 namePrefix: standalone-
 
 configMapGenerator:
-  - name: app-config
+  - name: application-configmap
     envs:
       - .env
       
