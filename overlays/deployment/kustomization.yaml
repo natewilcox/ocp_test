@@ -42,18 +42,15 @@ patches:
       - op: replace
         path: /spec/host
         value: deployment-application.apps-crc.testing
-#   - target:
-#       group: apps
-#       version: v1
-#       kind: Deployment
-#       name: application-deployment
-#     patch: |- 
-#       - op: replace
-#         path: /spec/selector/matchLabels/app
-#         value: deployment-application-pod-label
-#       - op: replace
-#         path: /spec/template/metadata/labels/app
-#         value: deployment-application-pod-label
-#       - op: replace
-#         path: /metadata/labels/app
-#         value: deployment-application-deployment-label
+  - target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: application-deployment
+    patch: |- 
+      - op: replace
+        path: /spec/selector/matchLabels/app
+        value: application-pod-label
+      - op: replace
+        path: /spec/template/metadata/labels/app
+        value: application-pod-label
