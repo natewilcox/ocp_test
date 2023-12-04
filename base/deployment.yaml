@@ -21,10 +21,4 @@ spec:
       - image: natewilcox/node-server:1.0.0
         imagePullPolicy: IfNotPresent
         name: node-server
-        resources: {}
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      serviceAccount: super-user
       serviceAccountName: super-user
