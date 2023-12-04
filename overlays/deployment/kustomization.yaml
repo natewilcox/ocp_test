@@ -1,59 +1,59 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-resources:
-  - "../../base"
+# resources:
+#   - "../../base"
 
 
-namePrefix: deployment-
+# namePrefix: deployment-
 
 configMapGenerator:
   - name: app-config
     envs:
       - .env
       
-replacements:
-  - source:
-      kind: Service
-      name: application-service
-      fieldPath: metadata.name
-    targets:
-      - select:
-          kind: Route
-        fieldPaths: 
-          - spec.to.name
-  - source:
-      kind: Deployment
-      name: application-deployment
-      fieldPath: metadata.labels.app
-    targets:
-      - select:
-          kind: Service
-        fieldPaths: 
-          - spec.selector.app
+# replacements:
+#   - source:
+#       kind: Service
+#       name: application-service
+#       fieldPath: metadata.name
+#     targets:
+#       - select:
+#           kind: Route
+#         fieldPaths: 
+#           - spec.to.name
+#   - source:
+#       kind: Deployment
+#       name: application-deployment
+#       fieldPath: metadata.labels.app
+#     targets:
+#       - select:
+#           kind: Service
+#         fieldPaths: 
+#           - spec.selector.app
 
-patches:
-  - target:
-      group: route.openshift.io
-      version: v1
-      kind: Route
-      name: application-route
-    patch: |-
-      - op: replace
-        path: /spec/host
-        value: deployment-application.apps-crc.testing
-  - target:
-      group: apps
-      version: v1
-      kind: Deployment
-      name: application-deployment
-    patch: |- 
-      - op: replace
-        path: /spec/selector/matchLabels/app
-        value: deployment-application-pod-label
-      - op: replace
-        path: /spec/template/metadata/labels/app
-        value: deployment-application-pod-label
-      - op: replace
-        path: /metadata/labels/app
-        value: deployment-application-deployment-label
+# patches:
+#   - target:
+#       group: route.openshift.io
+#       version: v1
+#       kind: Route
+#       name: application-route
+#     patch: |-
+#       - op: replace
+#         path: /spec/host
+#         value: deployment-application.apps-crc.testing
+#   - target:
+#       group: apps
+#       version: v1
+#       kind: Deployment
+#       name: application-deployment
+#     patch: |- 
+#       - op: replace
+#         path: /spec/selector/matchLabels/app
+#         value: deployment-application-pod-label
+#       - op: replace
+#         path: /spec/template/metadata/labels/app
+#         value: deployment-application-pod-label
+#       - op: replace
+#         path: /metadata/labels/app
+#         value: deployment-application-deployment-label
