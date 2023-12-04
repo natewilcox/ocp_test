@@ -5,7 +5,7 @@ resources:
   - "../../base"
 
 
-namePrefix: deployment-
+# namePrefix: deployment-
 
 configMapGenerator:
   - name: app-config

@@ -23,5 +23,5 @@ spec:
         name: node-server
         envFrom:
         - configMapRef:
-            name: deployment-app-config
+            name: app-config
       serviceAccountName: super-user
