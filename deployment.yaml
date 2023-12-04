@@ -10,12 +10,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: node
+      app: pod-label
 
   template:
     metadata:
       labels:
-        app: node
+        app: pod-label
     spec:
       containers:
       - image: natewilcox/node-server:1.0.0

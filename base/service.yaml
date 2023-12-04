@@ -12,7 +12,6 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    Kind: Deployment
-    app: node
+    app: pod-label
   sessionAffinity: None
   type: ClusterIP
