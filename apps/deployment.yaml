@@ -20,3 +20,9 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
+
+  depends_on:
+  - target:
+      apiVersion: v1
+      kind: ConfigMap
+      name: app-config
