@@ -9,6 +9,9 @@ metadata:
 spec:
   containers:
   - name: node-server-container
-    image: natewilcox/node_server:1.0.5
+    image: natewilcox/node-server:1.0.2
     ports:
     - containerPort: 8080
+    env:
+    - name: label
+      value: "Hello from standalone pod"

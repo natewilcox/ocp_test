@@ -23,5 +23,5 @@ spec:
         name: node-server
         env:
           - name: label
-            value: "Hello"
+            value: "Hello from deployment"
       serviceAccountName: super-user
