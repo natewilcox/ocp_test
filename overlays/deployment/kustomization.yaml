@@ -32,16 +32,16 @@ configMapGenerator:
 #         fieldPaths: 
 #           - spec.selector.app
 
-# patches:
-#   - target:
-#       group: route.openshift.io
-#       version: v1
-#       kind: Route
-#       name: application-route
-#     patch: |-
-#       - op: replace
-#         path: /spec/host
-#         value: deployment-application.apps-crc.testing
+patches:
+  - target:
+      group: route.openshift.io
+      version: v1
+      kind: Route
+      name: application-route
+    patch: |-
+      - op: replace
+        path: /spec/host
+        value: deployment-application.apps-crc.testing
 #   - target:
 #       group: apps
 #       version: v1

@@ -3,8 +3,8 @@ kind: Route
 
 metadata:
   labels:
-    app: node
-  name: node
+    app: application-route-label
+  name: application-route
   namespace: nathan-ns
 
 spec:
