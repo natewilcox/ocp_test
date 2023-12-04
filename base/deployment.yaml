@@ -2,20 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: node
-  name: node
+    app: deployment-label
+  name: deployment
   namespace: nathan-ns
 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: node
+      app: deployment-pod-label
 
   template:
     metadata:
       labels:
-        app: node
+        app: deployment-pod-label
     spec:
       containers:
       - image: natewilcox/node-server:1.0.0

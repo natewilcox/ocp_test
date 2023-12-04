@@ -3,12 +3,12 @@ kind: Route
 
 metadata:
   labels:
-    app: node
-  name: node
+    app: deployment-route-label
+  name: deployment-route
   namespace: nathan-ns
 
 spec:
-  host: node-nathan-ns.apps-crc.testing
+  host: deployment-nathan-ns.apps-crc.testing
   port:
     targetPort: 8080
   to:
