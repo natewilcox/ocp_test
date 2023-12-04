@@ -25,6 +25,6 @@ spec:
           - name: label
             valueFrom:
               configMapKeyRef:
-                name: app-config
+                name: app-config-k6h82mh46k
                 key: label
       serviceAccountName: super-user
