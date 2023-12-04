@@ -5,7 +5,7 @@ resources:
   - "../../base"
 
 
-# namePrefix: deployment-
+namePrefix: deployment-
 
 configMapGenerator:
   - name: app-config
@@ -13,15 +13,15 @@ configMapGenerator:
       - .env
       
 replacements:
-#   - source:
-#       kind: Service
-#       name: application-service
-#       fieldPath: metadata.name
-#     targets:
-#       - select:
-#           kind: Route
-#         fieldPaths: 
-#           - spec.to.name
+  - source:
+      kind: Service
+      name: application-service
+      fieldPath: metadata.name
+    targets:
+      - select:
+          kind: Route
+        fieldPaths: 
+          - spec.to.name
   - source:
       kind: Deployment
       name: application-deployment
