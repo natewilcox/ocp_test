@@ -21,4 +21,7 @@ spec:
       - image: natewilcox/node-server:1.0.1
         imagePullPolicy: IfNotPresent
         name: node-server
+        envFrom:
+        - configMapRef:
+            name: app-config
       serviceAccountName: super-user
