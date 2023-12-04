@@ -18,7 +18,7 @@ spec:
         app: placeholder
     spec:
       containers:
-      - image: natewilcox/node-server:1.0.2
+      - image: natewilcox/node-server:1.0.3
         imagePullPolicy: IfNotPresent
         name: node-server
         env:
