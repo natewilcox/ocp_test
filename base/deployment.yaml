@@ -18,7 +18,7 @@ spec:
         app: placeholder
     spec:
       containers:
-      - image: natewilcox/node-server:1.0.0
+      - image: natewilcox/node-server:1.0.1
         imagePullPolicy: IfNotPresent
         name: node-server
       serviceAccountName: super-user
