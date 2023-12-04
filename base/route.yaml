@@ -13,4 +13,4 @@ spec:
     targetPort: 8080
   to:
     kind: Service
-    name: node
+    name: application-service

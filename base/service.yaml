@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: deployment-service-label
-  name: node
+    app: application-service-label
+  name: application-service
   namespace: nathan-ns
 
 spec:
