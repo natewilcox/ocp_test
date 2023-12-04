@@ -13,5 +13,8 @@ spec:
     ports:
     - containerPort: 8080
     env:
-    - name: label
-      value: "Hello from standalone pod"
+      - name: label
+        valueFrom:
+          configMapKeyRef:
+            name: application-configmap
+            key: label 
