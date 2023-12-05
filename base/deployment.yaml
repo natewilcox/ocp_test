@@ -23,7 +23,7 @@ spec:
           name: application-configmap
       containers:
       - name: application-image
-        
+        image:
         volumeMounts:
         - name: application-configmap
           mountPath: /usr/src/app/config
@@ -45,5 +45,5 @@ spec:
       - application-image
       from:
         kind: ImageStreamTag
-        name: dev-application-imagestream:dev
+        name: application-imagestream:dev
         namespace: nathan-ns
