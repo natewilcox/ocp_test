@@ -27,5 +27,9 @@ spec:
               secretKeyRef:
                 name: application-secret
                 key: label 
+        volumes:
+          - name: application-configmap
+            configMap:
+              name: application-configmap
 
       serviceAccountName: super-user
