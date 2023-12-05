@@ -6,7 +6,7 @@ resources:
   - "../../base"
 
 
-# namePrefix: deployment-
+namePrefix: dev-
 
 configMapGenerator:
   - name: application-configmap
@@ -42,7 +42,7 @@ patches:
     patch: |-
       - op: replace
         path: /spec/host
-        value: deployment-application.apps-crc.testing
+        value: dev-application.apps-crc.testing
   - target:
       group: apps
       version: v1
