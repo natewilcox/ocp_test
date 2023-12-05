@@ -23,7 +23,7 @@ spec:
           name: application-configmap
       containers:
       - name: application-image
-        image: node-server:dev
+        image: node-server:1.0.3
         imagePullPolicy: IfNotPresent
         
         volumeMounts:
