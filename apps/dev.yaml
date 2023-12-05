@@ -14,7 +14,7 @@ spec:
   
   source:
     repoURL: https://github.com/natewilcox/ocp_test.git 
-    path: overlays/deployment
+    path: overlays/dev
     targetRevision: master
     
   syncPolicy:
