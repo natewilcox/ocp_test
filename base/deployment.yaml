@@ -38,3 +38,14 @@ spec:
                 key: label 
 
       serviceAccountName: super-user
+
+  triggers:
+  - type: ImageChange
+    imageChangeParams:
+      automatic: true
+      containerNames:
+      - application-image
+      from:
+        kind: ImageStreamTag
+        name: dev-application-imagestream:dev
+        namespace: nathan-ns
