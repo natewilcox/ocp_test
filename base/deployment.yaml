@@ -17,19 +17,23 @@ spec:
       labels:
         app: placeholder
     spec:
+      volumes:
+      - name: application-configmap
+        configMap:
+          name: application-configmap
       containers:
       - image: natewilcox/node-server:1.0.3
         imagePullPolicy: IfNotPresent
         name: node-server
+        volumeMounts:
+        - name: application-configmap
+          mountPath: /usr/src/app/config
+          readOnly: true
         env:
           - name: label
             valueFrom:
               secretKeyRef:
                 name: application-secret
                 key: label 
-        volumes:
-          - name: application-configmap
-            configMap:
-              name: application-configmap
 
       serviceAccountName: super-user
