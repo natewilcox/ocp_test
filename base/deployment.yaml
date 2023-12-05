@@ -23,7 +23,7 @@ spec:
           name: application-configmap
       containers:
       - name: application-image
-        image: dev-application-imagestream:dev
+        image: natewilcox/node-server@sha256:036b2fbbf92110154027d7b03f6b1ca98e61192acc4424d7ae61704a9665db52
         volumeMounts:
         - name: application-configmap
           mountPath: /usr/src/app/config
