@@ -24,8 +24,8 @@ spec:
         env:
           - name: label
             valueFrom:
-              configMapKeyRef:
-                name: application-configmap
+              secretKeyRef:
+                name: application-secret
                 key: label 
 
       serviceAccountName: super-user
