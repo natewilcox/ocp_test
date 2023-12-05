@@ -5,7 +5,6 @@ namespace: nathan-ns
 resources:
   - "../../base"
 
-
 namePrefix: dev-
 
 configMapGenerator:
