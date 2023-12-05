@@ -8,3 +8,4 @@ resources:
   - "route.yaml"
   - "secret.yaml"
   - "configmap.yaml"
+  - "imagestream.yaml"
