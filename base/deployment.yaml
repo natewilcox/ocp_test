@@ -23,8 +23,6 @@ spec:
           name: application-configmap
       containers:
       - name: application-image
-        image: dev-application-imagestream:dev
-        imagePullPolicy: IfNotPresent
         
         volumeMounts:
         - name: application-configmap
