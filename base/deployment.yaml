@@ -22,9 +22,10 @@ spec:
         configMap:
           name: application-configmap
       containers:
-      - image: natewilcox/node-server:1.0.3
+      - name: application-image
+        image: application-imagestream:dev
         imagePullPolicy: IfNotPresent
-        name: node-server
+        
         volumeMounts:
         - name: application-configmap
           mountPath: /usr/src/app/config
