@@ -8,7 +8,7 @@ resources:
 namePrefix: dev-
 
 configMapGenerator:
-  - name: application-configmap
+  - name: generated-application-configmap
     envs:
       - .env
       
