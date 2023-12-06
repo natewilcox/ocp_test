@@ -6,6 +6,8 @@ metadata:
   namespace: nathan-ns
 
 spec:
+  localPolicy:
+    local: false
   tags:
   - name: dev
     from:
@@ -13,3 +15,5 @@ spec:
       name: natewilcox/node-server:1.0.5
     importPolicy:
       scheduled: true
+    resourcePolicy:
+      type: Source
