@@ -9,11 +9,9 @@ spec:
   lookupPolicy:
     local: true
   tags:
-  - name: dev
+  - name: latest
     from:
       kind: DockerImage
       name: natewilcox/node-server:1.0.5
     importPolicy:
       scheduled: true
-    # resourcePolicy:
-    #   type: Source
