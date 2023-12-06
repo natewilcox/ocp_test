@@ -7,7 +7,7 @@ metadata:
 
 spec:
   localPolicy:
-    local: false
+    local: true
   tags:
   - name: dev
     from:
@@ -15,5 +15,5 @@ spec:
       name: natewilcox/node-server:1.0.5
     importPolicy:
       scheduled: true
-    resourcePolicy:
-      type: Source
+    # resourcePolicy:
+    #   type: Source
