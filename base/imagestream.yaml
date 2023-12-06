@@ -10,6 +10,6 @@ spec:
   - name: dev
     from:
       kind: DockerImage
-      name: natewilcox/node-server:1.0.3
+      name: natewilcox/node-server:1.0.5
     importPolicy:
       scheduled: true
