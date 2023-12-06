@@ -25,7 +25,7 @@ spec:
         # In order to use an imagestream in a deployment, you must use the Docker image reference
         # you can get this with the command: oc get istag/dev-application-imagestream:dev -o jsonpath='{.image.dockerImageReference}'
       - name: application-image
-        image: natewilcox/node-server@sha256:036b2fbbf92110154027d7b03f6b1ca98e61192acc4424d7ae61704a9665db52
+        image: natewilcox/node-server@sha256:1ad0908f4ed2e6a8e11ebcc436ce07b812c2d62a4b6316c3cd141a7a7b234caf
         volumeMounts:
         - name: application-configmap
           mountPath: /usr/src/app/config
