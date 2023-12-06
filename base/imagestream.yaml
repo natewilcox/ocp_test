@@ -6,7 +6,7 @@ metadata:
   namespace: nathan-ns
 
 spec:
-  localPolicy:
+  lookupPolicy:
     local: true
   tags:
   - name: dev
