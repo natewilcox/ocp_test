@@ -20,3 +20,13 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
+  
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      jsonPointers:
+        - /spec/template/spec/containers/0/image
+    - group: image.openshift.io
+      kind: ImageStream
+      jsonPointers:
+        - /spec/tags/0/from/name
