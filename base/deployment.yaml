@@ -29,7 +29,7 @@ spec:
         # 1. Import the new image - oc import-image dev-application-imagestream:1.0.7 --from=natewilcox/node-server:1.0.7 --confirm
         # 2. Tag the new image - oc tag dev-application-imagestream:1.0.7 dev-application-imagestream:dev
       - name: application-image
-        image: natewilcox/node-server@sha256:1ad0908f4ed2e6a8e11ebcc436ce07b812c2d62a4b6316c3cd141a7a7b234caf
+        image: dev-application-imagestream:dev
         volumeMounts:
         - name: application-configmap
           mountPath: /usr/src/app/config
