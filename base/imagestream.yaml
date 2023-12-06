@@ -9,7 +9,7 @@ spec:
   lookupPolicy:
     local: true
   tags:
-  - name: latest
+  - name: placeholder
     from:
       kind: DockerImage
       name: natewilcox/node-server:1.0.5

@@ -49,8 +49,20 @@ patches:
       name: application-deployment
     patch: |- 
       - op: replace
+        path: /spec/template/spec/containers/0/image
+        value: dev-application-imagestream:dev
+      - op: replace
         path: /spec/selector/matchLabels/app
         value: application-pod-label
       - op: replace
         path: /spec/template/metadata/labels/app
         value: application-pod-label
+  - target:
+      group: image.openshift.io
+      version: v1
+      kind: ImageStream
+      name: application-imagestream
+    patch: |- 
+      - op: replace
+        path: /spec/tags/0/name
+        value: dev
